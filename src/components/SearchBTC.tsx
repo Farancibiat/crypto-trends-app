@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
 import { trendsApi } from "../services/trends";
+import Spinner from "./Spinner";
 
 const SearchBTC = () => {
   const [pageState, setPageState] = useState<number>(1);
@@ -60,18 +61,7 @@ const SearchBTC = () => {
           </table>
         </div>
       )}
-      {isFetching && (
-        <div className="lds-roller">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      )}
+      {isFetching && <Spinner />}
     </div>
   );
 };
