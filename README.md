@@ -4,8 +4,6 @@ This project it's a basic App that uses Redux Toolkit Query to display info from
 
 The projects displays a table with 10 cryto currencies that loads 10 more items when get's to the table bottom.
 
-if you want to see it deployed you can visit [farancibiat.cl](https:farancibiat.cl)
-
 ## Available Scripts
 
 In the project directory, you can run:
