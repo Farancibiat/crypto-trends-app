@@ -25,7 +25,6 @@ const SearchBTC = () => {
     },
     [data] // eslint-disable-line react-hooks/exhaustive-deps
   );
-
   return (
     <div className="container">
       {isError &&
@@ -43,12 +42,23 @@ const SearchBTC = () => {
             </thead>
             <tbody>
               {cryptoData.map((crypto: any, index) => {
+                const {
+                  id,
+                  symbol,
+                  metrics: {
+                    market_data: {
+                      price_usd: usd,
+                      price_btc: btc,
+                      price_eth: eth,
+                    },
+                  },
+                } = crypto;
                 return (
-                  <tr key={crypto.id + index}>
-                    <td style={{ fontSize: "20px" }}>{crypto.symbol}</td>
-                    <td>${crypto.metrics.market_data.price_usd.toFixed(4)}</td>
-                    <td>${crypto.metrics.market_data.price_btc.toFixed(4)}</td>
-                    <td>${crypto.metrics.market_data.price_eth.toFixed(4)}</td>
+                  <tr key={id + index}>
+                    <td style={{ fontSize: "20px" }}>{symbol}</td>
+                    <td>${usd.toFixed(4)}</td>
+                    <td>${btc.toFixed(4)}</td>
+                    <td>${eth.toFixed(4)}</td>
                   </tr>
                 );
               })}
