@@ -16,8 +16,9 @@ code {
   margin: 70px auto 0 auto;
 }
 .scroll-able {
-  height: 360px;
+  height: 300px;
   overflow: -moz-scrollbars-vertical;
+  -webkit-overflow-scrolling: touch;
   overflow-y: scroll;
 }
 

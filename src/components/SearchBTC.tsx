@@ -6,7 +6,7 @@ const SearchBTC = () => {
   const [pageState, setPageState] = useState<number>(1);
   const [cryptoData, setCryptoData] = useState<any[] | null[]>([]);
   const useTrendingCryptos = trendsApi.endpoints.useTrendingCryptos.useQuery;
-  const { data, error, isLoading, isSuccess } = useTrendingCryptos({
+  const { data, isError, isFetching, isSuccess } = useTrendingCryptos({
     page: pageState,
   });
   const handleScroll = (e: any) => {
@@ -32,19 +32,8 @@ const SearchBTC = () => {
 
   return (
     <div className="container">
-      {isLoading && (
-        <div className="lds-roller">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      )}
-      {error && "Error:" + error}
+      {isError &&
+        "Hubo un error al conectar con la base de datos, intente recargar"}
       {data && (
         <div className="scroll-able" onScroll={handleScroll}>
           <table>
@@ -69,6 +58,18 @@ const SearchBTC = () => {
               })}
             </tbody>
           </table>
+        </div>
+      )}
+      {isFetching && (
+        <div className="lds-roller">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
       )}
     </div>
