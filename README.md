@@ -4,6 +4,8 @@ This project it's a basic App that uses Redux Toolkit Query to display info from
 
 The projects displays a table with 10 cryto currencies that loads 10 more items when get's to the table bottom.
 
+if you want to see the app deployed just go to [crypto-trends.farancibiat.cl/](http://crypto-trends.farancibiat.cl/)
+
 ## Available Scripts
 
 In the project directory, you can run:
