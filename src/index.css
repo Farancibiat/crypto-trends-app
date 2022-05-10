@@ -14,10 +14,10 @@ code {
 
 .container {
   margin: 70px auto 0 auto;
-  width: 50%;
 }
 .scroll-able {
   height: 360px;
+  overflow: -moz-scrollbars-vertical;
   overflow-y: scroll;
 }
 

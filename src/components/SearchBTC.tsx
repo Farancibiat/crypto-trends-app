@@ -10,6 +10,7 @@ const SearchBTC = () => {
     page: pageState,
   });
   const handleScroll = (e: any) => {
+    console.log(e.target.scrollHeight, `espacio: ${e.target.scrollTo}`);
     const bottom =
       e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight;
     if (bottom) {
