@@ -11,7 +11,6 @@ const SearchBTC = () => {
     page: pageState,
   });
   const handleScroll = (e: any) => {
-    console.log(e.target.scrollHeight, `espacio: ${e.target.scrollTo}`);
     const bottom =
       e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight;
     if (bottom) {
@@ -20,13 +19,9 @@ const SearchBTC = () => {
   };
   useEffect(
     () => {
-      const addCrypto = () => {
-        if (isSuccess) {
-          const cryptoTemp = [...cryptoData, ...data.data];
-          setCryptoData(cryptoTemp);
-        }
-      };
-      addCrypto();
+      if (isSuccess) {
+        setCryptoData([...cryptoData, ...data.data]);
+      }
     },
     [data] // eslint-disable-line react-hooks/exhaustive-deps
   );
@@ -38,7 +33,7 @@ const SearchBTC = () => {
       {data && (
         <div className="scroll-able" onScroll={handleScroll}>
           <table>
-            <thead>
+            <thead className="header-fixed">
               <tr>
                 <th>Name</th>
                 <th>USD Price</th>

@@ -25,14 +25,23 @@ code {
 }
 
 .scroll-able table {
+  background-color: #ffc107;
+  position: relative;
   margin-left: auto;
   margin-right: auto;
   border: 1px solid black;
 }
 
+.header-fixed {
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
+
 tr,
 th,
 td {
+  background-color: azure;
   border: 1px solid black;
   margin: 0;
 }

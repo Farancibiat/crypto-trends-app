@@ -5,7 +5,7 @@ import SearchBTC from "./components/SearchBTC";
 function App() {
   return (
     <div className="App">
-      <h1>Welcome to Pehuen's Crypto Trends App</h1>
+      <h1>Welcome to Farancibiat's Crypto Trends App</h1>
       <SearchBTC />
       <div className="semi-footer">
         Develop by{" "}
