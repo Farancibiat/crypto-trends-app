@@ -14,9 +14,11 @@ code {
 
 .container {
   margin: 70px auto 0 auto;
+  max-width: 400px;
 }
 .scroll-able {
   height: 300px;
+
   overflow: -moz-scrollbars-vertical;
   -webkit-overflow-scrolling: touch;
   overflow-y: scroll;
@@ -42,6 +44,7 @@ td {
 /* Loader-style  */
 
 .lds-roller {
+  margin-top: 30px;
   display: inline-block;
   position: relative;
   width: 80px;
